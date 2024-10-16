@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import requests
+from flask_cors import CORS  # CORS támogatás importálása
 
 app = Flask(__name__)
+CORS(app)  # Engedélyezzük a CORS kéréseket az alkalmazásra
 
 @app.route('/get_token', methods=['POST'])
 def get_token():
